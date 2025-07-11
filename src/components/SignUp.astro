@@ -1,0 +1,39 @@
+---
+// src/components/SignUp.astro
+---
+
+<section id="signup" class="py-20 bg-gray-50">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Stay Updated</h2>
+            <p class="text-lg text-gray-600">
+                Be the first to know when tournament details are announced. We'll send you updates on registration, sponsorship opportunities, and event details.
+            </p>
+        </div>
+        
+        <div class="bg-white rounded-2xl shadow-lg p-8 w-2xl">
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Get Tournament Notifications</h3>
+                <p class="text-gray-600">We'll send you updates about the tournament date, location, registration details, and more. Have questions? Include them in the form!</p>
+            </div>
+            
+            <!-- Google Forms Embed -->
+            <iframe 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSeZ1SWN3dqnrwxvS5EjJ1_vAQd1jk7hikQs_idIiOJEG0zaRw/viewform?embedded=true"
+                width="600"
+                height="600"
+                class="border-2 border-dashed border-gray-300 rounded-xl bg-gray-50">
+                Loading…
+            </iframe>
+            <div class="mt-6 flex items-center justify-center text-sm text-gray-500">
+                <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                </svg>
+                While Sam and SPAM may rhyme, one of them was awesome and one of them sucks.
+                <br />
+                <br />
+                Your information is secure and will only be used for tournament updates.
+            </div>
+        </div>
+    </div>
+</section>

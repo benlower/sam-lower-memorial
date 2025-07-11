@@ -1,0 +1,200 @@
+---
+// src/components/HeroImage.astro
+interface Props {
+    images?: string[];
+    altTexts?: string[];
+    rotationInterval?: number;
+    displayMode?: 'crop' | 'contain' | 'smart-crop';
+}
+
+const { 
+    images = ['/images/IMG_5915.png'],
+    altTexts = ['Sam Lower playing golf - Image 1'],
+    rotationInterval = 4,
+    displayMode = 'smart-crop'
+} = Astro.props as Props;
+
+const componentId = `hero-image-${Math.random().toString(36).substr(2, 9)}`;
+
+// Define CSS classes based on display mode
+const getImageClasses = (mode: string) => {
+    switch (mode) {
+        case 'crop':
+            return 'absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000';
+        case 'contain':
+            return 'absolute inset-0 w-full h-full object-contain transition-opacity duration-1000';
+        case 'smart-crop':
+            return 'absolute inset-0 w-full h-full object-cover transition-opacity duration-1000';
+        default:
+            return 'absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000';
+    }
+};
+
+const getContainerClasses = (mode: string) => {
+    switch (mode) {
+        case 'contain':
+            return 'relative w-full h-80 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl overflow-hidden';
+        default:
+            return 'relative w-full h-80 bg-gray-200 rounded-2xl overflow-hidden';
+    }
+};
+
+const getObjectPosition = (mode: string) => {
+    return mode === 'smart-crop' ? 'center 30%' : undefined;
+};
+---
+
+<div class="relative overflow-hidden rounded-2xl shadow-2xl">
+    <!-- Image container -->
+    <div class={getContainerClasses(displayMode)}>
+        {images.map((image, index) => (
+            <img
+                id={`${componentId}-img-${index}`}
+                src={image}
+                alt={altTexts[index] || `Sam Lower Memorial - Image ${index + 1}`}
+                class={`${getImageClasses(displayMode)} ${index === 0 ? 'opacity-100' : 'opacity-0'}`}
+                style={getObjectPosition(displayMode) ? `object-position: ${getObjectPosition(displayMode)};` : ''}
+                loading={index === 0 ? 'eager' : 'lazy'}
+            />
+        ))}
+        
+        <!-- Fallback placeholder -->
+        <div 
+            id={`${componentId}-placeholder`}
+            class="absolute inset-0 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center opacity-0 transition-opacity duration-1000"
+        >
+            <div class="text-center text-white">
+                <svg class="w-12 h-12 mx-auto mb-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <p class="text-lg font-medium">Memorial Photos</p>
+                <p class="text-sm opacity-75">Images of Sam playing golf</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image indicators (dots) - only show if more than 1 image -->
+    {images.length > 1 && (
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            {images.map((_, index) => (
+                <button
+                    id={`${componentId}-dot-${index}`}
+                    class={`w-2 h-2 rounded-full transition-all duration-300 ${index === 0 ? 'bg-white' : 'bg-white/50'} hover:bg-white focus:bg-white focus:outline-none`}
+                    aria-label={`View image ${index + 1}`}
+                    data-index={index}
+                ></button>
+            ))}
+        </div>
+    )}
+
+    <!-- Image counter - only show if more than 1 image -->
+    {images.length > 1 && (
+        <div class="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm font-medium">
+            <span id={`${componentId}-counter`}>1</span> / {images.length}
+        </div>
+    )}
+</div>
+
+<script define:vars={{ componentId, images, rotationInterval }}>
+    // Hero image rotation functionality
+    (function() {
+        let currentIndex = 0;
+        let rotationTimer;
+        let isPaused = false;
+        
+        const imageElements = [];
+        const dotElements = [];
+        
+        // Get all elements for this component instance
+        for (let i = 0; i < images.length; i++) {
+            const img = document.getElementById(`${componentId}-img-${i}`);
+            const dot = document.getElementById(`${componentId}-dot-${i}`);
+            if (img) imageElements.push(img);
+            if (dot) dotElements.push(dot);
+        }
+        
+        const counterElement = document.getElementById(`${componentId}-counter`);
+        const placeholderElement = document.getElementById(`${componentId}-placeholder`);
+        const containerElement = imageElements[0]?.parentElement;
+        
+        // Show placeholder if first image fails to load
+        if (imageElements[0]) {
+            imageElements[0].addEventListener('error', () => {
+                if (placeholderElement) {
+                    placeholderElement.style.opacity = '1';
+                }
+            });
+        }
+        
+        function showImage(index) {
+            // Hide all images
+            imageElements.forEach((img, i) => {
+                if (img) {
+                    img.style.opacity = i === index ? '1' : '0';
+                }
+            });
+            
+            // Update dots
+            dotElements.forEach((dot, i) => {
+                if (dot) {
+                    dot.className = dot.className.replace(/(bg-white\/50|bg-white)/, i === index ? 'bg-white' : 'bg-white/50');
+                }
+            });
+            
+            // Update counter
+            if (counterElement) {
+                counterElement.textContent = (index + 1).toString();
+            }
+            
+            currentIndex = index;
+        }
+        
+        function nextImage() {
+            if (!isPaused && imageElements.length > 1) {
+                const nextIndex = (currentIndex + 1) % imageElements.length;
+                showImage(nextIndex);
+            }
+        }
+        
+        function startRotation() {
+            if (imageElements.length > 1) {
+                rotationTimer = setInterval(nextImage, rotationInterval * 1000);
+            }
+        }
+        
+        function stopRotation() {
+            if (rotationTimer) {
+                clearInterval(rotationTimer);
+                rotationTimer = null;
+            }
+        }
+        
+        // Add click handlers for dots
+        dotElements.forEach((dot, index) => {
+            if (dot) {
+                dot.addEventListener('click', () => {
+                    showImage(index);
+                    stopRotation();
+                    setTimeout(startRotation, 2000); // Resume after 2 seconds
+                });
+            }
+        });
+        
+        // Pause rotation on hover
+        if (containerElement) {
+            containerElement.addEventListener('mouseenter', () => {
+                isPaused = true;
+            });
+            
+            containerElement.addEventListener('mouseleave', () => {
+                isPaused = false;
+            });
+        }
+        
+        // Start the rotation
+        startRotation();
+        
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', stopRotation);
+    })();
+</script>
