@@ -5,9 +5,13 @@ import '../styles/global.css';
 export interface Props {
     title: string;
     description?: string;
+    image?: string;
 }
 
-const { title, description = "Join us for The Sam Lower Memorial Golf Tournament honoring Sam Lower and supporting multiple myeloma research in the Indianapolis area." } = Astro.props;
+const { title, description = "Join us for The Sam Lower Memorial Golf Tournament honoring Sam Lower and supporting multiple myeloma research in the Indianapolis area.", image = "/images/sam-main.png" } = Astro.props;
+const canonicalURL = Astro.url.href;
+const siteUrl = Astro.site || "https://samlowermemorial.org";
+const fullImageUrl = new URL(image, siteUrl).href;
 ---
 
 <!DOCTYPE html>
@@ -17,6 +21,14 @@ const { title, description = "Join us for The Sam Lower Memorial Golf Tournament
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
     <meta name="description" content={description}>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={fullImageUrl} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Your Site Name" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={fullImageUrl} />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
