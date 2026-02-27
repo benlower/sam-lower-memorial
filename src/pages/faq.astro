@@ -1,0 +1,53 @@
+---
+// src/pages/faq.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { faqs } from '../data/faq';
+---
+
+<Layout
+    title="FAQ | The Sam Lower Memorial Golf Tournament"
+    description="Frequently asked questions about the Sam Lower Memorial Golf Tournament."
+>
+    <Header />
+
+    <main class="py-16 bg-gray-50 min-h-screen">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h1 class="text-4xl font-bold text-gray-900 mb-3">Frequently Asked Questions</h1>
+                <p class="text-lg text-gray-500">Everything you need to know about the tournament.</p>
+            </div>
+
+            <div class="space-y-4">
+                {faqs.map((faq, i) => (
+                    <details class="bg-white rounded-xl border border-gray-100 shadow-sm group" open={i === 0}>
+                        <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none select-none">
+                            <span class="text-lg font-semibold text-gray-900 pr-4">{faq.question}</span>
+                            <svg
+                                class="w-5 h-5 text-gray-400 flex-shrink-0 transition-transform group-open:rotate-180"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-50 pt-4">
+                            {faq.answer}
+                        </div>
+                    </details>
+                ))}
+            </div>
+
+            <div class="mt-12 bg-green-50 rounded-2xl p-8 text-center">
+                <p class="text-gray-700 font-medium mb-4">Still have questions?</p>
+                <a href="https://forms.gle/qKG4MpsjAeoaviSe9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>

@@ -1,0 +1,45 @@
+---
+// src/components/FaqPreview.astro
+import { faqs } from '../data/faq';
+
+const preview = faqs.slice(0, 2);
+---
+
+<section id="faq" class="py-20 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+            <p class="text-lg text-gray-600">Quick answers to common questions about the tournament.</p>
+        </div>
+
+        <div class="space-y-4 mb-8">
+            {preview.map((faq, i) => (
+                <details class="bg-white rounded-xl border border-gray-100 shadow-sm group" open={i === 0}>
+                    <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none select-none">
+                        <span class="text-lg font-semibold text-gray-900 pr-4">{faq.question}</span>
+                        <svg
+                            class="w-5 h-5 text-gray-400 flex-shrink-0 transition-transform group-open:rotate-180"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-50 pt-4">
+                        {faq.answer}
+                    </div>
+                </details>
+            ))}
+        </div>
+
+        <div class="text-center">
+            <a href="/faq" class="inline-flex items-center gap-2 text-green-600 font-semibold hover:text-green-700 transition-colors">
+                See all FAQs
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>

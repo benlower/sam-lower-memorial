@@ -1,0 +1,60 @@
+---
+// src/pages/updates.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { updates } from '../data/updates';
+
+function formatDate(iso: string) {
+    return new Date(iso + 'T12:00:00').toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    });
+}
+---
+
+<Layout
+    title="Updates | The Sam Lower Memorial Golf Tournament"
+    description="Stay up to date with the latest news and announcements for the Sam Lower Memorial Golf Tournament."
+>
+    <Header />
+
+    <main class="py-16 bg-gray-50 min-h-screen">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h1 class="text-4xl font-bold text-gray-900 mb-3">Updates</h1>
+                <p class="text-lg text-gray-500">The latest news and announcements from the tournament.</p>
+            </div>
+
+            {updates.length === 0 ? (
+                <div class="text-center py-20 text-gray-400">
+                    <p class="text-lg">No updates yet — check back soon.</p>
+                </div>
+            ) : (
+                <div class="space-y-10">
+                    {updates.map((update) => (
+                        <article class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                            {update.image && (
+                                <img
+                                    src={update.image.src}
+                                    alt={update.image.alt}
+                                    class="w-full object-cover max-h-80"
+                                />
+                            )}
+                            <div class="p-8">
+                                <time class="text-sm font-medium text-green-600 uppercase tracking-wide">
+                                    {formatDate(update.date)}
+                                </time>
+                                <h2 class="text-2xl font-bold text-gray-900 mt-2 mb-4">{update.title}</h2>
+                                <p class="text-gray-600 leading-relaxed whitespace-pre-line">{update.message}</p>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            )}
+        </div>
+    </main>
+
+    <Footer />
+</Layout>
