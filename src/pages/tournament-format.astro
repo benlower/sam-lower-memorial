@@ -1,0 +1,146 @@
+---
+// src/pages/tournament-format.astro
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+    title="Tournament Format | The Sam Lower Memorial Golf Tournament"
+    description="Learn about the tournament format, on-course contests, prizes, and fun activities for the Sam Lower Memorial Golf Tournament."
+>
+    <Header />
+
+    <main class="py-16 bg-gray-50 min-h-screen">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="mb-12">
+                <h1 class="text-4xl font-bold text-gray-900 mb-3">Tournament Format & On-Course Games</h1>
+                <p class="text-lg text-gray-500">Everything you need to know about how the day plays out.</p>
+            </div>
+
+            <!-- Format -->
+            <section class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 mb-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900">4-Person Scramble</h2>
+                </div>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    The tournament is played as a 4-person scramble — the most team-friendly format in golf. Every player on the team hits their shot, the team selects the best one, and everyone plays their next shot from that spot. This continues until the ball is holed.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    This format makes the day fun and accessible for golfers of all skill levels. Teams are encouraged to bring their own foursome, but individual players are welcome and will be paired with others to complete a team. There's no handicap requirement — just show up ready to have a great time.
+                </p>
+            </section>
+
+            <!-- On-Course Contests -->
+            <section class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 mb-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900">On-Course Contests</h2>
+                </div>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Throughout the round, you'll have chances to compete in individual challenges beyond the team score. Each contest is its own moment to shine.
+                </p>
+
+                <div class="space-y-5">
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Closest to the Pin</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                On select par 3s, every player gets their shot at glory. The player whose tee shot ends up closest to the flagstick wins. We'll run 2–4 of these throughout the round.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-1">Straightest Drive</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                Accuracy off the tee wins here — not distance. On 1–2 designated holes, the drive that finishes closest to a marked center line takes the title. A reminder that course management matters.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Lower Power(ups) -->
+            <section class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 mb-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900">Lower Power(ups)</h2>
+                </div>
+                <p class="text-gray-600 leading-relaxed mb-3">
+                    Lower Power(ups) are your team's secret weapon on the course. Each kit comes loaded with mulligans and other creative advantages — little boosts that give you a few chances to shake off a bad shot, stay in the game, and keep the round moving.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Think of it as leveling up for a good cause. Every kit purchased puts more money directly toward multiple myeloma research, so the more power(ups) in play, the better.
+                </p>
+            </section>
+
+            <!-- Prizes -->
+            <section class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 mb-10">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900">Prizes</h2>
+                </div>
+
+                <div class="space-y-5">
+                    <div class="bg-green-50 rounded-xl p-5">
+                        <h3 class="font-semibold text-gray-900 mb-2">Winning Team — Personalized Titleist Pro V1s</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Each member of the first-place team takes home a dozen Titleist Pro V1 golf balls personalized for the Sam Lower Memorial tournament. A keepsake worth playing with.
+                        </p>
+                    </div>
+
+                    <div class="bg-green-50 rounded-xl p-5">
+                        <h3 class="font-semibold text-gray-900 mb-2">Contest Winners — Bear Slide Pro Shop Credit</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Winners of the Closest to the Pin and Straightest Drive contests each receive Bear Slide Golf Club pro shop credit — redeemable toward equipment, merchandise, or future rounds of golf at the course.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <div class="bg-green-600 rounded-2xl p-8 text-center">
+                <h2 class="text-2xl font-bold text-white mb-2">Ready to Play?</h2>
+                <p class="text-green-100 mb-6">Spots are limited. Register your team today and join us on May 15th at Bear Slide Golf Club.</p>
+                <a href="/#signup" class="inline-flex items-center justify-center px-6 py-3 bg-white text-green-700 font-semibold rounded-lg hover:bg-green-50 transition-colors">
+                    Register Now
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <Footer />
+</Layout>
