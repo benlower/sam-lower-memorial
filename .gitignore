@@ -22,3 +22,8 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# responses file
+src/data/responses.tsv
+src/data/converted-registrants.ts
+src/data/example-registrants.ts
