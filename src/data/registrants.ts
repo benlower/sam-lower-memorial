@@ -63,10 +63,35 @@ export const teams: Team[] = [
             { name: "Gavin L." },
         ],
     },
+    {
+        name: "Team ZerPenBell",
+        players: [
+            { name: "Mike C." },
+            { name: "Todd C." },
+            { name: "Henry P." },
+            { name: "Greg C." },
+        ],
+    },
+    {
+        name: "AVC Auto 2nd String",
+        players: [
+            { name: "Chuck L." },
+        ],
+    }
 ];
 
 // Individual registrants awaiting team assignment by the committee
 export const singles: Player[] = [
     { name: "Dave Ja." },
     { name: "Aaron L." },
+    { name: "AJ S." },
 ];
+
+
+// Edits
+// 1. Stan L. team: add Michael L. and two x TBA
+// 2. Par or Lower: remove two x TBA
+// 3. The Johnson Brothers: Doug J., Derek J., Mike J., and David J.
+// 4. David L. team: add Gavin L.
+// 5. Singles: Dave Ja., Aaron L., AJ S.
+// 6. Team ZerPenBell: Mike C. Todd C. Henry P. Greg C.
