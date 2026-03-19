@@ -76,6 +76,9 @@ export const teams: Team[] = [
         name: "AVC Auto 2nd String",
         players: [
             { name: "Chuck L." },
+            { name: "TBA" },
+            { name: "TBA" },
+            { name: "TBA" }
         ],
     }
 ];
@@ -95,3 +98,4 @@ export const singles: Player[] = [
 // 4. David L. team: add Gavin L.
 // 5. Singles: Dave Ja., Aaron L., AJ S.
 // 6. Team ZerPenBell: Mike C. Todd C. Henry P. Greg C.
+// 7. AVC Auto: add 3 x TBA

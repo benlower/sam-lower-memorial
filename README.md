@@ -16,3 +16,8 @@ Registration responses come in via Google Form and are exported as `src/data/res
 4. Copy `converted-registrants.ts` and save it as `src/data/registrants.ts`, making any manual edits needed (e.g. assigning singles to teams, fixing TBA names).
 
 `registrants.ts` is what the site uses. The script never touches it.
+
+## Update links
+Send out targeted links to specific dates using #YYYY-MM-DD format as follows:
+
+https://samlowermemorial.org/updates/#2026-03-05
