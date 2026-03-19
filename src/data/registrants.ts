@@ -28,8 +28,8 @@ export const teams: Team[] = [
         players: [
             { name: "Stan L." },
             { name: "Michael L." },
-            { name: "TBA" },
-            { name: "TBA" },
+            { name: "Mike V." },
+            { name: "Jim R." },
         ],
     },
     {
@@ -92,7 +92,7 @@ export const singles: Player[] = [
 
 
 // Edits
-// 1. Stan L. team: add Michael L. and two x TBA
+// 1. Stan L. team: add Michael L. Mike V. and Jim R.
 // 2. Par or Lower: remove two x TBA
 // 3. The Johnson Brothers: Doug J., Derek J., Mike J., and David J.
 // 4. David L. team: add Gavin L.
