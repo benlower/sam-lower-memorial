@@ -17,10 +17,10 @@ export interface Update {
 
 export const updates: Update[] = [
     {
-        date: "2026-03-13",
+        date: "2026-03-19",
         title: "The Field is Filling Up — Don't Get Shut Out",
         message:
-            "We just launched The Field — a live look at everyone who's registered for the tournament. And the numbers don't lie: 22 of 48 spots are already gone. That's 46% of the field claimed, with complete foursomes locked in and more teams forming every week.\n\nFull teams are in. Partial teams are in. Even individual players who don't have a foursome yet are getting registered — the tournament committee will place singles on a team so you won't miss out just because you're flying solo.\n\nThere are only 26 spots left. Once they're gone, they're gone. Check out the field, see who's already in, and get your name on the list before the cut.",
+            "We just launched The Field — a live look at everyone who's registered for the tournament. And the numbers don't lie: 28 of 48 spots are already gone. That's 58% of the field claimed, with complete foursomes locked in and more teams forming every week.\n\nFull teams are in. Partial teams are in. Even individual players who don't have a foursome yet are getting registered — the tournament committee will place singles on a team so you won't miss out just because you're flying solo.\n\nThere are only 20 spots left. Once they're gone, they're gone. Check out the field, see who's already in, and get your name on the list before the cut.",
         link: { href: "/the-field", label: "See Who's Playing" },
         image: { src: "/images/balls.jpg", alt: "Balls, balls, balls!" }
     },
