@@ -76,9 +76,17 @@ export const teams: Team[] = [
         name: "AVC Auto 2nd String",
         players: [
             { name: "Chuck L." },
-            { name: "TBA" },
-            { name: "TBA" },
-            { name: "TBA" }
+            { name: "Lc L." },
+            { name: "Dave S." },
+            { name: "Ryan J." }
+        ],
+    },
+    {
+        name: "Tiger Who",
+        players: [
+            { name: "AJ S." },
+            { name: "Nathan J." },
+            { name: "Seth J." },
         ],
     }
 ];
@@ -87,7 +95,6 @@ export const teams: Team[] = [
 export const singles: Player[] = [
     { name: "Dave Ja." },
     { name: "Aaron L." },
-    { name: "AJ S." },
 ];
 
 
@@ -96,6 +103,7 @@ export const singles: Player[] = [
 // 2. Par or Lower: remove two x TBA
 // 3. The Johnson Brothers: Doug J., Derek J., Mike J., and David J.
 // 4. David L. team: add Gavin L.
-// 5. Singles: Dave Ja., Aaron L., AJ S.
+// 5. Singles: Dave Ja., Aaron L.
 // 6. Team ZerPenBell: Mike C. Todd C. Henry P. Greg C.
-// 7. AVC Auto: add 3 x TBA
+// 7. AVC Auto: add Lc L., Dave S., and Ryan J.
+// 8. Tiger Who: AJ S. team with Nathan & Seth J.
