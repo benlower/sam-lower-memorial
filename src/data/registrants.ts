@@ -106,6 +106,14 @@ export const teams: Team[] = [
             { name: "Michael N." },
             { name: "Larry B." },
         ],
+    },
+    {
+        players: [
+            { name: "Gary G." },
+            { name: "Randy O." },
+            { name: "Andy B." },
+            { name: "Pat B." },
+        ],
     }
 
 ];
@@ -128,3 +136,4 @@ export const singles: Player[] = [
 // 8. Tiger Who: AJ S. team with Nathan & Seth J.
 // 9. Brandon & Diane A team
 // 10. Nick Carman team
+// 11. Gary Goshert Team glgoshert@gmail.com
