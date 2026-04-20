@@ -88,7 +88,26 @@ export const teams: Team[] = [
             { name: "Nathan J." },
             { name: "Seth J." },
         ],
+    },
+    {
+        name: "Aiman High",
+        players: [
+            { name: "Brandon A." },
+            { name: "Diane A." },
+            { name: "Jon A." },
+            { name: "Teddy C." },
+        ],
+    },
+    {
+        name: "The Good & The Bad",
+        players: [
+            { name: "Nick C." },
+            { name: "Stu M." },
+            { name: "Michael N." },
+            { name: "Larry B." },
+        ],
     }
+
 ];
 
 // Individual registrants awaiting team assignment by the committee
@@ -107,3 +126,5 @@ export const singles: Player[] = [
 // 6. Team ZerPenBell: Mike C. Todd C. Henry P. Greg C.
 // 7. AVC Auto: add Lc L., Dave S., and Ryan J.
 // 8. Tiger Who: AJ S. team with Nathan & Seth J.
+// 9. Brandon & Diane A team
+// 10. Nick Carman team

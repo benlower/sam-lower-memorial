@@ -17,6 +17,13 @@ export interface Update {
 
 export const updates: Update[] = [
     {
+        date: "2026-04-20",
+        title: "Live Concert the Evening of the Tournament — Featuring Cari Lower",
+        message:
+            "We're excited to share that Sam's daughter, Cari, will be performing a live concert the evening of the tournament.\n\nThe concert runs from 6:30–8:30 PM and will feature Cari's original folk music. The show will be held outdoors at 8762 Washington Boulevard E Dr, Indianapolis, IN 46240 — and will move indoors if the weather doesn't cooperate.\n\nAdmission is by suggested donation of $20. Snack boxes will be available for purchase, and it's BYOB.\n\nPlease note: this concert is a separate, independent event and is not officially affiliated with the Sam Lower Memorial Golf Tournament. Any donations support the artists and venue — not cancer research.",
+        image: { src: "/images/concert-crowd.jpg", alt: "Crowd at an outdoor concert."}
+    },
+    {
         date: "2026-03-19",
         title: "The Field is Filling Up — Don't Get Shut Out",
         message:
