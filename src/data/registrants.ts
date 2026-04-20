@@ -108,6 +108,7 @@ export const teams: Team[] = [
         ],
     },
     {
+        name: "Sam's Spartans",
         players: [
             { name: "Gary G." },
             { name: "Randy O." },
