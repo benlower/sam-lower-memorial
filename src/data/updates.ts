@@ -18,6 +18,12 @@ export interface Update {
 export const updates: Update[] = [
     {
         date: "2026-04-28",
+        title: "Registration is Now Closed",
+        message: "That's a wrap on registration. The field is full and the teams are set for the 2026 Sam Lower Memorial Golf Tournament. Thank you to everyone who signed up — we can't wait to see you on May 15th at Bear Slide Golf Club.\n\nTee times will be sent out prior to the tournament.",
+        link: { href: "/the-field", label: "See the Field" },
+    },
+    {
+        date: "2026-04-28",
         title: "Lower Power(up) Details — Upgrade Your Round",
         message: `Want to gain an edge on the course while supporting a great cause? Lower Power(ups) are available for purchase on tournament day. Cash, Venmo, and Zelle accepted.
         
