@@ -46,6 +46,7 @@ export const teams: Team[] = [
         players: [
             { name: "Sarah M." },
             { name: "Ben L." },
+            { name: "Dave Ja." },
         ],
     },
     {
@@ -61,6 +62,7 @@ export const teams: Team[] = [
         players: [
             { name: "David L." },
             { name: "Gavin L." },
+            { name: "Aaron L." },
         ],
     },
     {
@@ -121,8 +123,7 @@ export const teams: Team[] = [
 
 // Individual registrants awaiting team assignment by the committee
 export const singles: Player[] = [
-    { name: "Dave Ja." },
-    { name: "Aaron L." },
+    
 ];
 
 
@@ -138,3 +139,4 @@ export const singles: Player[] = [
 // 9. Brandon & Diane A team
 // 10. Nick Carman team
 // 11. Gary Goshert Team
+// 12. add Dave Ja to Ben team and Aaron to David team
