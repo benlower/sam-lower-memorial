@@ -11,8 +11,10 @@
     "gen:registrants": "node scripts/generate-registrants.mjs"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.11.0",
+    "marked": "^18.0.2",
     "tailwindcss": "^4.1.11"
   }
 }
