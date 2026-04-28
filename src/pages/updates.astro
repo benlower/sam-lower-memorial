@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { updates } from '../data/updates';
+import { marked } from 'marked';
 
 function formatDate(iso: string) {
     return new Date(iso + 'T12:00:00').toLocaleDateString('en-US', {
@@ -59,7 +60,7 @@ function formatDate(iso: string) {
                                     {formatDate(update.date)}
                                 </time>
                                 <h2 class="text-2xl font-bold text-gray-900 mt-2 mb-4">{update.title}</h2>
-                                <p class="text-gray-600 leading-relaxed whitespace-pre-line">{update.message}</p>
+                                <div class="prose prose-green prose max-w-none text-gray-600" set:html={marked.parse(update.message)} />
                                 {update.link && (
                                     <div class="mt-6">
                                         <a href={update.link.href} class="inline-flex items-center justify-center px-5 py-2.5 bg-green-600 text-white text-sm font-semibold rounded-lg hover:bg-green-700 transition-colors">

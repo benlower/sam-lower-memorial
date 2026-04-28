@@ -17,6 +17,28 @@ export interface Update {
 
 export const updates: Update[] = [
     {
+        date: "2026-04-28",
+        title: "Lower Power(up) Details — Upgrade Your Round",
+        message: `Want to gain an edge on the course while supporting a great cause? Lower Power(ups) are available for purchase on tournament day. Cash, Venmo, and Zelle accepted.
+        
+        \n**Lower Power(up) Team Pack — $100 per Foursome**
+        \nBest value for teams looking to maximize every opportunity on the course. Includes:
+        \n- **4 Mulligans** — use anytime during the round to replay an errant shot or retry a putt that burned the edge. Each player gets a single use.
+        \n- **Cheat Code Hole** — choose one hole where your entire team tees off from 150 yards (Par 4) or 200 yards (Par 5). Use once during the round.
+        \n- **The Lifeline** — randomly assigned length of string (6-24"). If your ball finishes within the string length of the hole, it's in (no additional putt needed). Use once during the round.
+        \n\n**Pro tip:** pick the right hole for your cheat code and save your lifeline for a clutch moment — it can be the difference between winning and just missing out.
+        \n\nAll proceeds support Multiple Myeloma research.`,
+        image: { src: "/images/lowerpower.png", alt: "Lower Power(up) options for the tournament." },
+    },
+    {
+        date: "2026-04-27",
+        title: "Teams Are Set!",
+        message:
+            "The field is set. All teams have been finalized for the 2026 Sam Lower Memorial Golf Tournament. Check out The Field to see the complete lineup heading into tournament day. The tournament committee will reach out prior to the tournament to assign tee times.",
+        link: { href: "/the-field", label: "See the Field" },
+        image: { src: "/images/driverready.jpg", alt: "The teams are set."}
+    },
+    {
         date: "2026-04-20",
         title: "Live Concert the Evening of the Tournament — Featuring Cari Lower",
         message:
