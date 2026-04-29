@@ -8,6 +8,7 @@ export interface Player {
 export interface Team {
     name?: string; // optional — shows as "Foursome X" if omitted
     players: Player[];
+    teeTime?: string; // 24-hour format, e.g. "08:00"
 }
 
 // Maximum number of foursomes the event can accommodate
@@ -23,6 +24,7 @@ export const teams: Team[] = [
             { name: "Doug C." },
             { name: "Andy B." },
         ],
+        teeTime: "10:10"
     },
     {
         players: [
@@ -31,6 +33,7 @@ export const teams: Team[] = [
             { name: "Mike V." },
             { name: "Jim R." },
         ],
+        teeTime: "09:27"
     },
     {
         name: "Hoosier Mamas",
@@ -40,6 +43,7 @@ export const teams: Team[] = [
             { name: "Maggi C." },
             { name: "Kendra G." },
         ],
+        teeTime: "09:36"
     },
     {
         name: "Par or Lower",
@@ -48,6 +52,7 @@ export const teams: Team[] = [
             { name: "Ben L." },
             { name: "Dave Ja." },
         ],
+        teeTime: "09:09"
     },
     {
         name: "The Johnson Brothers",
@@ -57,6 +62,7 @@ export const teams: Team[] = [
             { name: "Mike J." },
             { name: "David J." },
         ],
+        teeTime: "09:18"
     },
     {
         players: [
@@ -64,6 +70,7 @@ export const teams: Team[] = [
             { name: "Gavin L." },
             { name: "Aaron L." },
         ],
+        teeTime: "09:00"
     },
     {
         name: "Team ZerPenBell",
@@ -73,6 +80,7 @@ export const teams: Team[] = [
             { name: "Henry P." },
             { name: "Greg C." },
         ],
+        teeTime: "09:52"
     },
     {
         name: "AVC Auto 2nd String",
@@ -82,6 +90,7 @@ export const teams: Team[] = [
             { name: "Dave S." },
             { name: "Ryan J." }
         ],
+        teeTime: "10:19"
     },
     {
         name: "Tiger Who",
@@ -90,6 +99,7 @@ export const teams: Team[] = [
             { name: "Nathan J." },
             { name: "Seth J." },
         ],
+        teeTime: "10:01"
     },
     {
         name: "Aiman High",
@@ -99,6 +109,7 @@ export const teams: Team[] = [
             { name: "Jon A." },
             { name: "Teddy C." },
         ],
+        teeTime: "09:45"
     },
     {
         name: "The Good & The Bad",
@@ -108,6 +119,7 @@ export const teams: Team[] = [
             { name: "Michael N." },
             { name: "Larry B." },
         ],
+        teeTime: "10:37"
     },
     {
         name: "Sam's Spartans",
@@ -117,6 +129,7 @@ export const teams: Team[] = [
             { name: "Andy B." },
             { name: "Pat B." },
         ],
+        teeTime: "10:28"
     }
 
 ];
