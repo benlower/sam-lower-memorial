@@ -27,6 +27,7 @@ export const teams: Team[] = [
         teeTime: "10:10"
     },
     {
+        name: "We Swing Stiff Shafts",
         players: [
             { name: "Stan L." },
             { name: "Michael L." },
@@ -65,6 +66,7 @@ export const teams: Team[] = [
         teeTime: "09:18"
     },
     {
+        name: "Bar Setters",
         players: [
             { name: "David L." },
             { name: "Gavin L." },
