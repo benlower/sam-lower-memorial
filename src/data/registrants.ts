@@ -71,6 +71,7 @@ export const teams: Team[] = [
             { name: "David L." },
             { name: "Gavin L." },
             { name: "Aaron L." },
+            { name: "Franklin C." },
         ],
         teeTime: "09:00"
     },
