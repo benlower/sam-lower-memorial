@@ -17,6 +17,13 @@ export interface Update {
 
 export const updates: Update[] = [
     {
+        date: "2026-05-05",
+        title: "10 Days Out — Full Field, Full Details",
+        message: "We are 10 days away from tournament day and the field is full. Here's everything you need to know heading in.\n\n**Tee Assignments**\n\n- Women play from the **Red tees**\n- Seniors play from the **Gold tees**\n- Everyone else plays from the **White tees**\n\n**On-Course Contests**\n\nThree individual contests will run throughout the round, each with Bear Slide pro shop credit awarded to the winner:\n\n- **Closest to the Pin — Hole 4** (par 3)\n- **Closest to the Pin — Hole 16** (par 3)\n- **Straightest Drive — Hole 8** (par 5)\n\nYour team score and the contests are completely independent — every player has a shot at winning regardless of how the team round is going.\n\nCheck out The Field to see your tee time and who you're playing alongside.",
+        link: { href: "/the-field", label: "See the Field" },
+        image: { src: "/images/10daysout.png", alt: "10 days out task list." },
+    },
+    {
         date: "2026-04-28",
         title: "Lower Power(up) Details — Upgrade Your Round",
         message: `Want to gain an edge on the course while supporting a great cause? Lower Power(ups) are available for purchase on tournament day. Cash, Venmo, and Zelle accepted.
