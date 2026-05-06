@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lower Power(up) Pack — Rules Card</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #e5e7eb;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .card {
+      background: white;
+      width: 8.5in;
+      min-height: 11in;
+      padding: 0.5in 0.65in 0.5in;
+      display: flex;
+      flex-direction: column;
+      gap: 0.14in;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    }
+
+    /* ── Header ── */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 0.18in;
+      padding-bottom: 0.18in;
+      border-bottom: 3px solid #059669;
+    }
+
+    header img {
+      height: 0.75in;
+      width: auto;
+      flex-shrink: 0;
+    }
+
+    .header-text h1 {
+      font-size: 22pt;
+      font-weight: 800;
+      color: #047857;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .header-text .subtitle {
+      font-size: 8.5pt;
+      color: #6b7280;
+      font-weight: 500;
+      margin-top: 3px;
+      letter-spacing: 0.01em;
+    }
+
+    .header-text .pack-price {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #047857;
+      margin-top: 5px;
+    }
+
+    /* ── Pack contents summary ── */
+    .pack-contents {
+      background: #f0f9f4;
+      border: 1.5px solid #dcf4e3;
+      border-radius: 8px;
+      padding: 0.1in 0.18in;
+      display: flex;
+      align-items: center;
+      gap: 0.18in;
+    }
+
+    .pack-contents h2 {
+      font-size: 8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #059669;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .pack-contents ul {
+      list-style: none;
+      display: flex;
+      gap: 0.18in;
+      flex-wrap: wrap;
+    }
+
+    .pack-contents li {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .pack-contents li::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #059669;
+      flex-shrink: 0;
+    }
+
+    /* ── Course rules ── */
+    .course-rules {
+      border: 1.5px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 0.12in 0.18in;
+    }
+
+    .course-rules-top {
+      display: flex;
+      gap: 0.18in;
+      align-items: flex-start;
+    }
+
+    .course-rules-left { flex: 1; }
+
+    .course-rules-divider {
+      width: 1.5px;
+      background: #e5e7eb;
+      align-self: stretch;
+      flex-shrink: 0;
+    }
+
+    .course-rules-right { flex: 1; }
+
+    .tee-grid {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      column-gap: 5px;
+      row-gap: 3px;
+      align-items: center;
+    }
+
+    .tee-name {
+      font-size: 8.5pt;
+      color: #374151;
+    }
+
+    .tee-arrow {
+      font-size: 8.5pt;
+      color: #9ca3af;
+    }
+
+    .tee-badge {
+      display: inline-block;
+      font-size: 7.5pt;
+      font-weight: 700;
+      padding: 1px 8px;
+      border-radius: 99px;
+      white-space: nowrap;
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
+      text-align: center;
+    }
+    .tee-badge.red   { background: #dc2626; color: white; }
+    .tee-badge.gold  { background: #d97706; color: white; }
+    .tee-badge.white { background: white; color: #374151; border: 1.5px solid #9ca3af; }
+
+    .course-rules h2 {
+      font-size: 8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #6b7280;
+      margin-bottom: 0.08in;
+    }
+
+    .course-rules-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .course-rule-item {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .course-rule-label {
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #111827;
+      white-space: nowrap;
+      min-width: 1in;
+    }
+
+    .course-rule-text {
+      font-size: 8.5pt;
+      color: #374151;
+      line-height: 1.4;
+    }
+
+    /* ── Rule sections ── */
+    .rules {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.1in;
+    }
+
+    .rule {
+      border-left: 4px solid #059669;
+      padding: 0.09in 0.12in;
+      background: #fafafa;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .rule-header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      margin-bottom: 6px;
+    }
+
+    .rule h3 {
+      font-size: 13pt;
+      font-weight: 700;
+      color: #047857;
+      line-height: 1.2;
+    }
+
+    .rule .badge {
+      font-size: 7.5pt;
+      font-weight: 600;
+      color: #059669;
+      background: #dcf4e3;
+      padding: 2px 7px;
+      border-radius: 99px;
+      white-space: nowrap;
+    }
+
+    .rule p {
+      font-size: 10pt;
+      color: #374151;
+      line-height: 1.5;
+    }
+
+    .rule ul {
+      margin: 6px 0 6px 1em;
+      list-style: disc;
+    }
+
+    .rule ul li {
+      font-size: 10pt;
+      color: #374151;
+      line-height: 1.5;
+      margin-bottom: 2px;
+    }
+
+    .rule ul li strong {
+      color: #111827;
+    }
+
+    .rule p + p {
+      margin-top: 5px;
+    }
+
+    .prize-category {
+      font-size: 6.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 1px 0;
+      border-radius: 99px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      width: 0.62in;
+      text-align: center;
+    }
+
+    .prize-category.team {
+      background: #dcf4e3;
+      color: #047857;
+    }
+
+    .prize-category.individual {
+      background: #f3f4f6;
+      color: #374151;
+    }
+
+
+    /* ── Pro tip ── */
+    .pro-tip {
+      background: #047857;
+      color: white;
+      border-radius: 8px;
+      padding: 0.13in 0.16in;
+      font-size: 9.5pt;
+      line-height: 1.5;
+    }
+
+    .pro-tip strong {
+      display: block;
+      font-size: 8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+      opacity: 0.85;
+    }
+
+    /* ── Raffle note ── */
+    .raffle-note {
+      border: 1.5px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 0.09in 0.16in;
+      font-size: 9pt;
+      color: #374151;
+      line-height: 1.5;
+    }
+
+    .raffle-note strong {
+      color: #111827;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1.5px solid #e5e7eb;
+      padding-top: 0.12in;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer p {
+      font-size: 8pt;
+      color: #9ca3af;
+    }
+
+    footer .cause {
+      font-weight: 600;
+      color: #059669;
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .card {
+        box-shadow: none;
+        width: 100%;
+        min-height: auto;
+      }
+      @page {
+        size: 8.5in 11in;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <header>
+      <img src="../public/images/SLM-logo.png" alt="Sam Lower Memorial">
+      <div class="header-text">
+        <h1>Lower Power(up) Pack</h1>
+        <p class="subtitle">May 15, 2026 &nbsp;·&nbsp; Bear Slide Golf Club, Cicero, IN</p>
+        <p class="pack-price">$100 per team &nbsp;·&nbsp; One pack per foursome &nbsp;·&nbsp; Cash, Venmo &amp; Zelle accepted</p>
+      </div>
+    </header>
+
+    <div class="course-rules">
+      <div class="course-rules-top">
+        <div class="course-rules-left">
+          <h2>Tournament Rules</h2>
+          <div class="course-rules-grid">
+            <div class="course-rule-item">
+              <span class="course-rule-label">Tees</span>
+              <div class="tee-grid">
+                <span class="tee-name">Women</span><span class="tee-arrow">→</span><span class="tee-badge red">Red</span>
+                <span class="tee-name">Seniors</span><span class="tee-arrow">→</span><span class="tee-badge gold">Gold</span>
+                <span class="tee-name">All others</span><span class="tee-arrow">→</span><span class="tee-badge white">White</span>
+              </div>
+            </div>
+            <div class="course-rule-item">
+              <span class="course-rule-label">3-Player Teams</span>
+              <span class="course-rule-text">Short a player? One teammate doubles up each hole — hitting twice per shot to keep pace with the field. The 4th mulligan goes to whoever is doubling up. Rotate every hole.</span>
+            </div>
+          </div>
+        </div>
+        <div class="course-rules-divider"></div>
+        <div class="course-rules-right">
+          <h2>Prizes</h2>
+          <div class="course-rules-grid">
+            <div class="course-rule-item">
+              <span class="prize-category team">Team</span>
+              <span class="course-rule-text"><strong>Lowest Score</strong> — Personalized Titleist Pro V1s for each player on the winning team.</span>
+            </div>
+            <div class="course-rule-item">
+              <span class="prize-category individual">Individual</span>
+              <span class="course-rule-text"><strong>Closest to Pin — Holes 4 &amp; 16</strong> — Bear Slide pro shop credit</span>
+            </div>
+            <div class="course-rule-item">
+              <span class="prize-category individual">Individual</span>
+              <span class="course-rule-text"><strong>Straightest Drive — Hole 8</strong> — Bear Slide pro shop credit</span>
+            </div>
+            <div class="course-rule-item" style="margin-top: 0.07in;">
+              <h2 style="margin-bottom: 0; white-space: nowrap;">Scorecards</h2>
+              <span class="course-rule-text">Use Bear Slide scorecards. Record your team's score on each hole and turn in at the end of the round.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pack-contents">
+      <h2>What's in Your Pack</h2>
+      <ul>
+        <li>4 Mulligan Cards</li>
+        <li>1 Cheat Code Hole Card</li>
+        <li>1 Lifeline (string)</li>
+      </ul>
+    </div>
+
+    <div class="rules">
+
+      <div class="rule">
+        <div class="rule-header">
+          <h3>Mulligan</h3>
+          <span class="badge">4 cards · one per player</span>
+        </div>
+        <p>Each player on your foursome receives one mulligan card. Use it anytime during the round to replay any shot — an errant drive, a chunked approach, or a putt that burned the edge.</p>
+        <p>Tear your card when you use it. One use per player, no exceptions.</p>
+      </div>
+
+      <div class="rule">
+        <div class="rule-header">
+          <h3>Cheat Code Hole</h3>
+          <span class="badge">1 card · one use</span>
+        </div>
+        <p>Choose one hole (any par 4 or par 5 on the course) where your entire team tees off from a preferred forward position instead of the standard tee box:</p>
+        <ul>
+          <li><strong>Par 4</strong> — team tees off from <strong>150 yards</strong> out from the center of the green.</li>
+          <li><strong>Par 5</strong> — team tees off from <strong>200 yards</strong> out from the center of the green.</li>
+        </ul>
+        <p>Declare before the hole begins. Tear the card when used. Use once during the round.</p>
+      </div>
+
+      <div class="rule">
+        <div class="rule-header">
+          <h3>The Lifeline</h3>
+          <span class="badge">1 string · one use</span>
+        </div>
+        <p>Your randomly assigned length of string (6–24 inches). At any point during the round, if your ball finishes within the string's length of the cup, it counts as holed — no additional shot needed.</p>
+        <p>Measure from the edge of the cup. Use once during the round.</p>
+      </div>
+
+    </div>
+
+
+    <div class="pro-tip">
+      <strong>50/50 Raffle</strong> Tickets available throughout the round on course. Drawing held at the end of the round.
+    </div>
+
+    <footer>
+      <p>samlowermemorial.org</p>
+      <p class="cause">All proceeds support Multiple Myeloma research.</p>
+    </footer>
+
+  </div>
+</body>
+</html>

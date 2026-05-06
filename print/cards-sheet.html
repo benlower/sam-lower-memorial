@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lower Power(up) Cards — Print Sheet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    /* ── Screen-only print instructions ── */
+    .print-instructions {
+      font-family: 'Inter', sans-serif;
+      background: #1f2937;
+      color: white;
+      padding: 12px 20px;
+      font-size: 11px;
+      line-height: 1.5;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .print-instructions strong { color: #6ee7b7; }
+    .print-instructions .tip { color: #9ca3af; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #d1d5db;
+    }
+
+    /* ── Sheet wrapper ── */
+    .sheet {
+      width: 8.5in;
+      min-height: 11in;
+      background: white;
+      margin: 0 auto;
+      padding: 0.5in 0.5625in; /* centers 2×3.5in cards with gutters */
+      display: grid;
+      grid-template-columns: 3.5in 3.5in;
+      grid-template-rows: 2in 2in 2in;
+      gap: 0.25in 0.4375in; /* row gap / col gap */
+      align-content: start;
+    }
+
+    /* ── Cut guides ── */
+    .sheet::before {
+      content: 'Cut along dashed lines';
+      position: absolute;
+      display: none; /* hidden; guides are on the cards themselves */
+    }
+
+    /* ── Base card ── */
+    .card {
+      width: 3.5in;
+      height: 2in;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      /* dashed outline as cut guide */
+      outline: 1.5px dashed #d1d5db;
+      outline-offset: 0px;
+    }
+
+    /* ── Mulligan card ── */
+    .mulligan .card-header {
+      background: #059669;
+      padding: 7px 12px 5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .mulligan .card-header .card-type {
+      font-size: 6pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #6ee7b7;
+      margin-bottom: 1px;
+    }
+
+    .mulligan .card-header h2 {
+      font-size: 14pt;
+      font-weight: 800;
+      color: white;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+
+    .mulligan .card-header img {
+      height: 28px;
+      width: auto;
+    }
+
+    .mulligan .card-body {
+      background: white;
+      flex: 1;
+      padding: 7px 12px 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .mulligan .card-body .rule-text {
+      font-size: 9.5pt;
+      font-weight: 500;
+      color: #374151;
+      line-height: 1.45;
+    }
+
+    .mulligan .card-body .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .mulligan .card-body .tournament {
+      font-size: 7.5pt;
+      color: #9ca3af;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    .mulligan .card-body .use-badge {
+      font-size: 7pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: white;
+      background: #059669;
+      padding: 2px 7px;
+      border-radius: 99px;
+      white-space: nowrap;
+    }
+
+    /* ── Cheat Code card ── */
+    .cheat-code .card-header {
+      background: #047857;
+      padding: 7px 12px 5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cheat-code .card-header .header-left h2 {
+      font-size: 12.5pt;
+      font-weight: 800;
+      color: white;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+
+    .cheat-code .card-header .header-left .card-type {
+      font-size: 6pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #6ee7b7;
+      margin-bottom: 1px;
+    }
+
+    .cheat-code .card-header img {
+      height: 28px;
+      width: auto;
+    }
+
+    .cheat-code .card-body {
+      background: #f0f9f4;
+      flex: 1;
+      padding: 7px 12px 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .cheat-code .card-body .rule-text {
+      font-size: 9pt;
+      font-weight: 500;
+      color: #374151;
+      line-height: 1.45;
+    }
+
+    .cheat-code .card-body .yardages {
+      display: flex;
+      gap: 8px;
+      margin: 4px 0;
+    }
+
+    .cheat-code .card-body .yardage-item {
+      background: white;
+      border: 1px solid #dcf4e3;
+      border-radius: 5px;
+      padding: 2px 8px;
+      font-size: 9pt;
+      color: #047857;
+      font-weight: 700;
+    }
+
+    .cheat-code .card-body .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .cheat-code .card-body .tournament {
+      font-size: 7.5pt;
+      color: #9ca3af;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    .cheat-code .card-body .use-badge {
+      font-size: 7pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: white;
+      background: #047857;
+      padding: 2px 7px;
+      border-radius: 99px;
+      white-space: nowrap;
+    }
+
+    /* ── Tear strip ── */
+    .card-tear {
+      border-top: 1px dashed #d1d5db;
+      text-align: center;
+      font-size: 6.5pt;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #9ca3af;
+      padding: 4px 0;
+      background: white;
+      flex-shrink: 0;
+    }
+
+    .cheat-code .card-tear {
+      background: #f0f9f4;
+    }
+
+    /* ── Blank / spare slot ── */
+    .blank {
+      background: transparent;
+      outline-color: transparent;
+    }
+
+    @media print {
+      .print-instructions { display: none; }
+      body { background: white; }
+      .sheet {
+        margin: 0;
+        box-shadow: none;
+        padding: 0.5in 0.5625in;
+      }
+      @page {
+        size: 8.5in 11in;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-instructions">
+    <div>
+      <strong>How to print:</strong> File → Print → set paper to US Letter, scale to 100% (no shrink-to-fit). Cut along dashed lines.
+    </div>
+    <div class="tip">
+      5 cards per pack: 4 Mulligans + 1 Cheat Code Hole
+    </div>
+  </div>
+
+  <div class="sheet">
+
+    <!-- Card 1: Mulligan -->
+    <div class="card mulligan">
+      <div class="card-header">
+        <div class="header-left">
+          <div class="card-type">Power-Up</div>
+          <h2>Mulligan</h2>
+        </div>
+        <img src="../public/images/SLM-logo.png" alt="SLM">
+      </div>
+      <div class="card-body">
+        <p class="rule-text">Replay any shot — an errant drive, a chunked approach, or a putt that burned the edge.</p>
+        <div class="card-footer">
+          <div class="tournament">Sam Lower Memorial<br>Golf Tournament · 2026</div>
+          <span class="use-badge">One Use Per Player</span>
+        </div>
+      </div>
+      <div class="card-tear">Tear this card when used</div>
+    </div>
+
+    <!-- Card 2: Mulligan -->
+    <div class="card mulligan">
+      <div class="card-header">
+        <div class="header-left">
+          <div class="card-type">Power-Up</div>
+          <h2>Mulligan</h2>
+        </div>
+        <img src="../public/images/SLM-logo.png" alt="SLM">
+      </div>
+      <div class="card-body">
+        <p class="rule-text">Replay any shot — an errant drive, a chunked approach, or a putt that burned the edge.</p>
+        <div class="card-footer">
+          <div class="tournament">Sam Lower Memorial<br>Golf Tournament · 2026</div>
+          <span class="use-badge">One Use Per Player</span>
+        </div>
+      </div>
+      <div class="card-tear">Tear this card when used</div>
+    </div>
+
+    <!-- Card 3: Mulligan -->
+    <div class="card mulligan">
+      <div class="card-header">
+        <div class="header-left">
+          <div class="card-type">Power-Up</div>
+          <h2>Mulligan</h2>
+        </div>
+        <img src="../public/images/SLM-logo.png" alt="SLM">
+      </div>
+      <div class="card-body">
+        <p class="rule-text">Replay any shot — an errant drive, a chunked approach, or a putt that burned the edge.</p>
+        <div class="card-footer">
+          <div class="tournament">Sam Lower Memorial<br>Golf Tournament · 2026</div>
+          <span class="use-badge">One Use Per Player</span>
+        </div>
+      </div>
+      <div class="card-tear">Tear this card when used</div>
+    </div>
+
+    <!-- Card 4: Mulligan -->
+    <div class="card mulligan">
+      <div class="card-header">
+        <div class="header-left">
+          <div class="card-type">Power-Up</div>
+          <h2>Mulligan</h2>
+        </div>
+        <img src="../public/images/SLM-logo.png" alt="SLM">
+      </div>
+      <div class="card-body">
+        <p class="rule-text">Replay any shot — an errant drive, a chunked approach, or a putt that burned the edge.</p>
+        <div class="card-footer">
+          <div class="tournament">Sam Lower Memorial<br>Golf Tournament · 2026</div>
+          <span class="use-badge">One Use Per Player</span>
+        </div>
+      </div>
+      <div class="card-tear">Tear this card when used</div>
+    </div>
+
+    <!-- Card 5: Cheat Code Hole -->
+    <div class="card cheat-code">
+      <div class="card-header">
+        <div class="header-left">
+          <div class="card-type">Power-Up</div>
+          <h2>Cheat Code<br>Hole</h2>
+        </div>
+        <img src="../public/images/SLM-logo.png" alt="SLM">
+      </div>
+      <div class="card-body">
+        <p class="rule-text">Your whole team tees off from a forward position on any one hole:</p>
+        <div class="yardages">
+          <span class="yardage-item">Par 4 → 150 yds</span>
+          <span class="yardage-item">Par 5 → 200 yds</span>
+        </div>
+        <div class="card-footer">
+          <div class="tournament">Sam Lower Memorial<br>Golf Tournament · 2026</div>
+          <span class="use-badge">One Use Per Team</span>
+        </div>
+      </div>
+      <div class="card-tear">Tear this card when used</div>
+    </div>
+
+    <!-- Slot 6: Blank -->
+    <div class="card blank"></div>
+
+  </div>
+
+</body>
+</html>

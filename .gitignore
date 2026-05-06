@@ -27,3 +27,6 @@ pnpm-debug.log*
 src/data/responses.tsv
 src/data/converted-registrants.ts
 src/data/example-registrants.ts
+
+# print assets with PII
+print/volunteers.html

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tee Times & Pairings — Sam Lower Memorial 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #e5e7eb;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .page {
+      background: white;
+      width: 8.5in;
+      min-height: 11in;
+      padding: 0.5in 0.65in 0.5in;
+      display: flex;
+      flex-direction: column;
+      gap: 0.15in;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    }
+
+    /* ── Header ── */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 0.18in;
+      padding-bottom: 0.15in;
+      border-bottom: 3px solid #059669;
+    }
+
+    header img {
+      height: 0.65in;
+      width: auto;
+      flex-shrink: 0;
+    }
+
+    .header-text h1 {
+      font-size: 19pt;
+      font-weight: 800;
+      color: #047857;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .header-text .subtitle {
+      font-size: 8.5pt;
+      color: #6b7280;
+      font-weight: 500;
+      margin-top: 3px;
+    }
+
+    /* ── Table ── */
+    .pairings-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 8px;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .pairings-table thead tr {
+      background: #047857;
+    }
+
+    .pairings-table thead th {
+      padding: 0.08in 0.14in;
+      text-align: left;
+      font-size: 7.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: white;
+    }
+
+    .pairings-table thead th.col-time  { width: 0.75in; }
+    .pairings-table thead th.col-hole  { width: 0.55in; text-align: center; }
+    .pairings-table thead th.col-team  { width: 1.4in; }
+    .pairings-table thead th.col-players { }
+
+    .pairings-table tbody tr {
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .pairings-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .pairings-table tbody tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    .pairings-table tbody td {
+      padding: 0.09in 0.14in;
+      vertical-align: middle;
+    }
+
+    .tee-time {
+      font-size: 11pt;
+      font-weight: 800;
+      color: #047857;
+      white-space: nowrap;
+    }
+
+    .tee-hole {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    .team-name {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #111827;
+      line-height: 1.3;
+    }
+
+    .three-player {
+      display: inline-block;
+      font-size: 6pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #b45309;
+      background: #fef3c7;
+      padding: 1px 6px;
+      border-radius: 99px;
+      margin-top: 2px;
+    }
+
+    .players-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px 16px;
+    }
+
+    .player-name {
+      font-size: 9pt;
+      color: #374151;
+      white-space: nowrap;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1.5px solid #e5e7eb;
+      padding-top: 0.1in;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer p {
+      font-size: 7.5pt;
+      color: #9ca3af;
+    }
+
+    footer .cause {
+      font-weight: 600;
+      color: #059669;
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .page { box-shadow: none; width: 100%; min-height: auto; }
+      @page { size: 8.5in 11in; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <img src="../public/images/SLM-logo.png" alt="Sam Lower Memorial">
+      <div class="header-text">
+        <h1>Tee Times &amp; Pairings</h1>
+        <p class="subtitle">May 15, 2026 &nbsp;·&nbsp; Bear Slide Golf Club, Cicero, IN &nbsp;·&nbsp; 4-Person Scramble &nbsp;·&nbsp; Everyone Starts on Hole 1</p>
+      </div>
+    </header>
+
+    <table class="pairings-table">
+      <thead>
+        <tr>
+          <th class="col-time">Tee Time</th>
+          <th class="col-hole">Hole</th>
+          <th class="col-team">Team</th>
+          <th class="col-players">Players</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td><div class="tee-time">9:00 AM</div></td>
+          <td><div class="tee-hole">1</div></td>
+          <td><div class="team-name">Bar Setters</div></td>
+          <td><div class="players-list">
+            <span class="player-name">David L.</span>
+            <span class="player-name">Gavin L.</span>
+            <span class="player-name">Aaron L.</span>
+            <span class="player-name">Franklin C.</span>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td><div class="tee-time">9:09 AM</div></td>
+          <td><div class="tee-hole">1</div></td>
+          <td>
+            <div class="team-name">Par or Lower</div>
+            <div class="three-player">3 Players</div>
+          </td>
+          <td><div class="players-list">
+            <span class="player-name">Sarah M.</span>
+            <span class="player-name">Ben L.</span>
+            <span class="player-name">Dave Ja.</span>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td><div class="tee-time">9:18 AM</div></td>
+          <td><div class="tee-hole">1</div></td>
+          <td><div class="team-name">The Johnson Brothers</div></td>
+          <td><div class="players-list">
+            <span class="player-name">Doug J.</span>
+            <span class="player-name">Derek J.</span>
+            <span class="player-name">Mike J.</span>
+            <span class="player-name">David J.</span>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td><div class="tee-time">9:27 AM</div></td>
+          <td><div class="tee-hole">1</div></td>
+          <td><div class="team-name">We Swing Stiff Shafts</div></td>
+          <td><div class="players-list">
+            <span class="player-name">Stan L.</span>
+            <span class="player-name">Michael L.</span>
+            <span class="player-name">Mike V.</span>
+            <span class="player-name">Jim R.</span>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td><div class="tee-time">9:36 AM</div></td>
+          <td><div class="tee-hole">1</div></td>
+          <td><div class="team-name">Hoosier Mamas</div></td>
+          <td><div class="players-list">
+            <span class="player-name">Kathi L.</span>
+            <span class="player-name">Sharon C.</span>
+            <span class="player-name">Maggi C.</span>
+            <span class="player-name">Kendra G.</span>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td><div class="tee-time">9:45 AM</div></td>
+          <td><div class="tee-hole">1</div></td>
+          <td><div class="team-name">Aiman High</div></td>
+          <td><div class="players-list">
+            <span class="player-name">Brandon A.</span>
+            <span class="player-name">Diane A.</span>
+            <span class="player-name">Jon A.</span>
+            <span class="player-name">Teddy C.</span>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td><div class="tee-time">9:52 AM</div></td>
+          <td><div class="tee-hole">1</div></td>
+          <td><div class="team-name">Team ZerPenBell</div></td>
+          <td><div class="players-list">
+            <span class="player-name">Mike C.</span>
+            <span class="player-name">Todd C.</span>
+            <span class="player-name">Henry P.</span>
+            <span class="player-name">Greg C.</span>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td><div class="tee-time">10:01 AM</div></td>
+          <td><div class="tee-hole">1</div></td>
+          <td>
+            <div class="team-name">Tiger Who</div>
+            <div class="three-player">3 Players</div>
+          </td>
+          <td><div class="players-list">
+            <span class="player-name">AJ S.</span>
+            <span class="player-name">Nathan J.</span>
+            <span class="player-name">Seth J.</span>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td><div class="tee-time">10:10 AM</div></td>
+          <td><div class="tee-hole">1</div></td>
+          <td><div class="team-name">4-Friends of Sam</div></td>
+          <td><div class="players-list">
+            <span class="player-name">Garret S.</span>
+            <span class="player-name">Tom R.</span>
+            <span class="player-name">Doug C.</span>
+            <span class="player-name">Andy B.</span>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td><div class="tee-time">10:19 AM</div></td>
+          <td><div class="tee-hole">1</div></td>
+          <td><div class="team-name">AVC Auto 2nd String</div></td>
+          <td><div class="players-list">
+            <span class="player-name">Chuck L.</span>
+            <span class="player-name">Lc L.</span>
+            <span class="player-name">Dave S.</span>
+            <span class="player-name">Ryan J.</span>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td><div class="tee-time">10:28 AM</div></td>
+          <td><div class="tee-hole">1</div></td>
+          <td><div class="team-name">Sam's Spartans</div></td>
+          <td><div class="players-list">
+            <span class="player-name">Gary G.</span>
+            <span class="player-name">Randy O.</span>
+            <span class="player-name">Andy B.</span>
+            <span class="player-name">Pat B.</span>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td><div class="tee-time">10:37 AM</div></td>
+          <td><div class="tee-hole">1</div></td>
+          <td><div class="team-name">The Good &amp; The Bad</div></td>
+          <td><div class="players-list">
+            <span class="player-name">Nick C.</span>
+            <span class="player-name">Stu M.</span>
+            <span class="player-name">Michael N.</span>
+            <span class="player-name">Larry B.</span>
+          </div></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <footer>
+      <p>Sam Lower Memorial Golf Tournament · samlowermemorial.org · 12 teams · 46 players</p>
+      <p class="cause">All proceeds support Multiple Myeloma research.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
