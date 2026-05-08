@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day-Of Run of Show — Sam Lower Memorial 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #e5e7eb;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .page {
+      background: white;
+      width: 8.5in;
+      min-height: 11in;
+      padding: 0.45in 0.65in 0.45in;
+      display: flex;
+      flex-direction: column;
+      gap: 0.18in;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    }
+
+    /* ── Header ── */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 0.18in;
+      padding-bottom: 0.15in;
+      border-bottom: 3px solid #059669;
+    }
+
+    header img {
+      height: 0.6in;
+      width: auto;
+      flex-shrink: 0;
+    }
+
+    .header-text h1 {
+      font-size: 19pt;
+      font-weight: 800;
+      color: #047857;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .header-text .subtitle {
+      font-size: 8.5pt;
+      color: #6b7280;
+      font-weight: 500;
+      margin-top: 3px;
+    }
+
+    /* ── Section label ── */
+    .section-label {
+      font-size: 7.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: white;
+      padding: 3px 10px;
+      border-radius: 99px;
+      align-self: flex-start;
+      margin-bottom: -0.08in;
+    }
+
+    .section-label.morning { background: #047857; }
+    .section-label.round   { background: #1d4ed8; }
+    .section-label.post    { background: #6d28d9; }
+
+    /* ── Table ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    thead tr {
+      background: #f9fafb;
+      border-bottom: 1.5px solid #e5e7eb;
+    }
+
+    thead th {
+      padding: 5px 10px;
+      text-align: left;
+      font-size: 7pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #6b7280;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fafafa;
+    }
+
+    tbody td {
+      padding: 6px 10px;
+      vertical-align: top;
+    }
+
+    .col-time { width: 0.75in; white-space: nowrap; }
+    .col-who  { width: 1.1in; }
+    .col-what { }
+
+    .time {
+      font-size: 10pt;
+      font-weight: 800;
+      color: #047857;
+      white-space: nowrap;
+    }
+
+    .time.blue   { color: #1d4ed8; }
+    .time.purple { color: #6d28d9; }
+
+    .task-name {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #111827;
+      line-height: 1.3;
+    }
+
+    .task-detail {
+      font-size: 8.5pt;
+      color: #6b7280;
+      line-height: 1.4;
+      margin-top: 1px;
+    }
+
+    .owner {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #374151;
+      line-height: 1.4;
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: auto;
+      border-top: 1.5px solid #e5e7eb;
+      padding-top: 0.1in;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer p {
+      font-size: 7.5pt;
+      color: #9ca3af;
+    }
+
+    footer .cause {
+      font-weight: 600;
+      color: #059669;
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .page { box-shadow: none; width: 100%; min-height: auto; }
+      @page { size: 8.5in 11in; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <img src="../images/SLM-logo.png" alt="Sam Lower Memorial">
+      <div class="header-text">
+        <h1>Day-Of Run of Show</h1>
+        <p class="subtitle">Sam Lower Memorial Golf Tournament · May 15, 2026 · Bear Slide Golf Club, Cicero, IN · Internal use only</p>
+      </div>
+    </header>
+
+    <!-- ── MORNING SETUP ── -->
+    <div class="section-label morning">Morning Setup</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th class="col-time">Time</th>
+          <th class="col-who">Who</th>
+          <th class="col-what">What</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="time">7:15 AM</div></td>
+          <td><div class="owner">Ben</div></td>
+          <td>
+            <div class="task-name">Pick up donuts &amp; coffee — Titus Bakery</div>
+            <div class="task-detail">Bring to Bear Slide and set up at registration table for arriving players.</div>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="time">7:45 AM</div></td>
+          <td><div class="owner">All volunteers</div></td>
+          <td>
+            <div class="task-name">Arrive at Bear Slide — Susan checks in volunteers</div>
+            <div class="task-detail">Susan confirms everyone knows their role. Ben coordinates with Bear Slide staff.</div>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="time">7:45 AM</div></td>
+          <td><div class="owner">Ben · David · Susan</div></td>
+          <td>
+            <div class="task-name">Set up registration table &amp; signage</div>
+            <div class="task-detail">Scorecards, rules sheets, pens, donuts &amp; coffee.</div>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="time">7:45 AM</div></td>
+          <td><div class="owner">Susan</div></td>
+          <td>
+            <div class="task-name">Set up bottled water in clubhouse</div>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="time">8:00 AM</div></td>
+          <td><div class="owner">Neal · Barb</div></td>
+          <td>
+            <div class="task-name">Registration opens — player check-in begins</div>
+            <div class="task-detail">Check players in, distribute scorecards, direct to pro shop for greens fees, point to Kyle (packs) and Scott (raffle), and toward donuts &amp; coffee, and to practice area.</div>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="time">8:00 AM</div></td>
+          <td><div class="owner">Kyle</div></td>
+          <td>
+            <div class="task-name">Power(up) pack sales open</div>
+            <div class="task-detail">$100/team, one per foursome. Collect cash, Venmo, or Zelle. Distribute pack contents on purchase.</div>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="time">8:00 AM</div></td>
+          <td><div class="owner">Scott</div></td>
+          <td>
+            <div class="task-name">50/50 raffle ticket sales open — first tee</div>
+            <div class="task-detail">$5/ticket or $20 for 5. Collect cash, Venmo, or Zelle. Work the first tee through all tee times.</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ── DURING THE ROUND ── -->
+    <div class="section-label round">During the Round (9:00 AM – ~3:00 PM)</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th class="col-time">Time</th>
+          <th class="col-who">Who</th>
+          <th class="col-what">What</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="time blue">8:50 AM</div></td>
+          <td><div class="owner">Neal · Barb</div></td>
+          <td>
+            <div class="task-name">First tee time — Bar Setters (9:00am tee time)</div>
+            <div class="task-detail">Direct each team to Hole 1 ten minutes prior to their assigned time. Last tee time is 10:37 AM (The Good &amp; The Bad). All teams start Hole 1.</div>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="time blue">9:00 AM</div></td>
+          <td><div class="owner">David</div></td>
+          <td>
+            <div class="task-name">Place contest markers on course</div>
+            <div class="task-detail">Closest to Pin signs → Holes 4 &amp; 16. Straightest Drive line → Hole 8. Signs provided by Bear Slide.</div>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="time blue">10:37 AM</div></td>
+          <td><div class="owner">Neal · Barb</div></td>
+          <td>
+            <div class="task-name">Last tee time — The Good &amp; The Bad</div>
+            <div class="task-detail">Ask this team to collect all on course markers after they complete the holes. Registration table can be broken down after last team tees off.</div>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="time blue">~10:40 AM</div></td>
+          <td><div class="owner">Scott</div></td>
+          <td>
+            <div class="task-name">Move to Hole 9 — continue raffle sales</div>
+            <div class="task-detail">Catch all teams as they make the turn.</div>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="time blue">~1:00 PM</div></td>
+          <td><div class="owner">Susan</div></td>
+          <td>
+            <div class="task-name">Set up clubhouse for post-round reception</div>
+            <div class="task-detail">Food, beverages, and water in place before first groups finish.</div>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="time blue">~1:00 PM</div></td>
+          <td><div class="owner">Scott</div></td>
+          <td>
+            <div class="task-name">Move to clubhouse — final raffle sales</div>
+            <div class="task-detail">Continue selling as groups finish. Coordinate drawing timing with Ben.</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ── POST-ROUND ── -->
+    <div class="section-label post">Post-Round (~1:00 PM)</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th class="col-time">Time</th>
+          <th class="col-who">Who</th>
+          <th class="col-what">What</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="time purple">Post round</div></td>
+          <td><div class="owner">David</div></td>
+          <td>
+            <div class="task-name">Collect contest results</div>
+            <div class="task-detail">Players self-measure and self-report Closest to Pin and Straightest Drive results. The Good & The Bad brings in markers for David.</div>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="time purple">Post round</div></td>
+          <td><div class="owner">All teams</div></td>
+          <td>
+            <div class="task-name">Collect scorecards as groups finish</div>
+            <div class="task-detail">David collects and begins tallying team scores.</div>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="time purple">~3:30 PM</div></td>
+          <td><div class="owner">Scott · Ben</div></td>
+          <td>
+            <div class="task-name">50/50 raffle drawing</div>
+            <div class="task-detail">Scott closes ticket sales. Ben announces drawing. Winner takes half the pot.</div>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="time purple">~3:35 PM</div></td>
+          <td><div class="owner">David</div></td>
+          <td>
+            <div class="task-name">Announce contest &amp; team winners</div>
+            <div class="task-detail">Closest to Pin (Holes 4 &amp; 16), Straightest Drive (Hole 8), and overall team standings (lowest score wins Titleist Pro V1s).</div>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="time purple">~3:40 PM</div></td>
+          <td><div class="owner">David · Ben</div></td>
+          <td>
+            <div class="task-name">Prize distribution</div>
+            <div class="task-detail">Bear Slide pro shop credit for individual contest winners. Personalized Titleist Pro V1s for winning team.</div>
+          </td>
+        </tr>
+        <tr>
+          <td><div class="time purple">~3:45 PM</div></td>
+          <td><div class="owner">All volunteers</div></td>
+          <td>
+            <div class="task-name">Teardown &amp; cleanup</div>
+            <div class="task-detail">Break down registration table, collect signage, remove on-course markers, general cleanup.</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <footer>
+      <p>Sam Lower Memorial Golf Tournament · samlowermemorial.org · Internal use only — do not distribute</p>
+      <p class="cause">All proceeds support Multiple Myeloma research.</p>
+    </footer>
+
+  </div>
+</body>
+</html>

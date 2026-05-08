@@ -21,3 +21,6 @@ Registration responses come in via Google Form and are exported as `src/data/res
 Send out targeted links to specific dates using #YYYY-MM-DD format as follows:
 
 https://samlowermemorial.org/updates/#2026-03-05
+
+## QR Codes
+Generate using https://goqr.me

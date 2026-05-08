@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate — Sam Lower Memorial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #e5e7eb;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .page {
+      background: white;
+      width: 8.5in;
+      min-height: 11in;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Green top band ── */
+    .top-band {
+      background: #047857;
+      padding: 0.35in 0.75in 0.3in;
+      display: flex;
+      align-items: center;
+      gap: 0.2in;
+    }
+
+    .top-band img {
+      height: 0.7in;
+      width: auto;
+      flex-shrink: 0;
+    }
+
+    .top-band-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .top-band-text .eyebrow {
+      font-size: 8pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #6ee7b7;
+    }
+
+    .top-band-text h1 {
+      font-size: 20pt;
+      font-weight: 800;
+      color: white;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    /* ── Body ── */
+    .body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.45in 0.85in 0.4in;
+      gap: 0.3in;
+    }
+
+    /* ── Headline ── */
+    .headline {
+      text-align: center;
+    }
+
+    .headline h2 {
+      font-size: 28pt;
+      font-weight: 800;
+      color: #111827;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .headline h2 em {
+      font-style: normal;
+      color: #047857;
+    }
+
+    .headline .subhead {
+      font-size: 12pt;
+      color: #6b7280;
+      font-weight: 500;
+      margin-top: 0.1in;
+      line-height: 1.5;
+      max-width: 5.5in;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── About Sam ── */
+    .about {
+      background: #f0f9f4;
+      border-left: 5px solid #059669;
+      border-radius: 0 10px 10px 0;
+      padding: 0.2in 0.25in;
+      width: 100%;
+    }
+
+    .about p {
+      font-size: 11pt;
+      color: #374151;
+      line-height: 1.65;
+    }
+
+    .about p strong {
+      color: #111827;
+    }
+
+    /* ── QR + CTA block ── */
+    .cta-block {
+      display: flex;
+      align-items: center;
+      gap: 0.4in;
+      width: 100%;
+    }
+
+    .qr-wrap {
+      flex-shrink: 0;
+      width: 2.4in;
+      height: 2.4in;
+      border: 2px solid #e5e7eb;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      overflow: hidden;
+    }
+
+    .qr-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .qr-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-align: center;
+      padding: 0.2in;
+    }
+
+    .qr-placeholder .qr-icon {
+      width: 1in;
+      height: 1in;
+      opacity: 0.15;
+    }
+
+    .qr-placeholder p {
+      font-size: 8pt;
+      color: #9ca3af;
+      line-height: 1.4;
+    }
+
+    .cta-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.12in;
+    }
+
+    .cta-text .step-label {
+      font-size: 8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #059669;
+    }
+
+    .cta-text h3 {
+      font-size: 18pt;
+      font-weight: 800;
+      color: #111827;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .cta-text .cta-body {
+      font-size: 10.5pt;
+      color: #374151;
+      line-height: 1.55;
+    }
+
+    .cta-text .url-box {
+      background: #f0f9f4;
+      border: 1.5px solid #dcf4e3;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 9pt;
+      color: #047857;
+      font-weight: 600;
+      word-break: break-all;
+      line-height: 1.4;
+    }
+
+    .cta-text .url-label {
+      font-size: 7.5pt;
+      color: #9ca3af;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    /* ── MMRF badge ── */
+    .mmrf-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.15in;
+      background: #faf5ff;
+      border: 1.5px solid #e9d5ff;
+      border-radius: 10px;
+      padding: 0.14in 0.2in;
+      width: 100%;
+    }
+
+    .mmrf-badge .mmrf-icon {
+      font-size: 22pt;
+      flex-shrink: 0;
+    }
+
+    .mmrf-badge-text h4 {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .mmrf-badge-text p {
+      font-size: 9pt;
+      color: #6b7280;
+      line-height: 1.4;
+      margin-top: 2px;
+    }
+
+    /* ── Footer band ── */
+    .footer-band {
+      background: #f9fafb;
+      border-top: 1.5px solid #e5e7eb;
+      padding: 0.14in 0.75in;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-band p {
+      font-size: 8pt;
+      color: #9ca3af;
+    }
+
+    .footer-band .cause {
+      font-weight: 600;
+      color: #059669;
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .page { box-shadow: none; width: 100%; min-height: auto; }
+      @page { size: 8.5in 11in; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <div class="top-band">
+      <img src="../images/SLM-logo.png" alt="Sam Lower Memorial">
+      <div class="top-band-text">
+        <div class="eyebrow">Sam Lower Memorial Golf Tournament · May 15, 2026</div>
+        <h1>Played in Memory of Sam Lower</h1>
+      </div>
+    </div>
+
+    <div class="body">
+
+      <div class="headline">
+        <h2>Help Us <em>Beat Multiple Myeloma.</em></h2>
+        <p class="subhead">
+          Today's tournament is raising money for research that could change — and save — lives.
+          You don't have to be playing to make a difference.
+        </p>
+      </div>
+
+      <div class="about">
+        <p>
+          <strong>Sam Lower</strong> was a beloved father, husband, and friend who passed away from Multiple Myeloma — a blood cancer that affects plasma cells in bone marrow. He loved golf, he loved people, and he made everyone around him better. This tournament is our way of honoring his memory and fighting back against the disease that took him from us.
+        </p>
+      </div>
+
+      <div class="cta-block">
+
+        <div class="qr-wrap">
+          <!-- Save your MMRF campaign QR code as public/images/mmrf-qr.png -->
+          <img src="../images/mmrf-qr.png" alt="QR code to donate"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="qr-placeholder" style="display:none">
+            <svg class="qr-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="5" width="38" height="38" rx="4" fill="#111827"/>
+              <rect x="13" y="13" width="22" height="22" rx="2" fill="white"/>
+              <rect x="57" y="5" width="38" height="38" rx="4" fill="#111827"/>
+              <rect x="65" y="13" width="22" height="22" rx="2" fill="white"/>
+              <rect x="5" y="57" width="38" height="38" rx="4" fill="#111827"/>
+              <rect x="13" y="65" width="22" height="22" rx="2" fill="white"/>
+              <rect x="57" y="57" width="10" height="10" fill="#111827"/>
+              <rect x="73" y="57" width="10" height="10" fill="#111827"/>
+              <rect x="57" y="73" width="10" height="10" fill="#111827"/>
+              <rect x="73" y="73" width="22" height="22" rx="2" fill="#111827"/>
+            </svg>
+            <p>Add QR code:<br><strong>public/images/mmrf-qr.png</strong></p>
+          </div>
+        </div>
+
+        <div class="cta-text">
+          <div class="step-label">How to donate</div>
+          <h3>Scan the QR code<br>with your phone.</h3>
+          <p class="cta-body">
+            Every dollar goes directly to the Multiple Myeloma Research Foundation — the leading organization funding breakthrough research and new treatments for this disease.
+          </p>
+          <div>
+            <div class="url-label">Or visit directly:</div>
+            <div class="url-box">cyo.themmrf.org/campaigns/sam-lower</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mmrf-badge">
+        <div class="mmrf-icon">🎗️</div>
+        <div class="mmrf-badge-text">
+          <h4>Multiple Myeloma Research Foundation (MMRF)</h4>
+          <p>The MMRF has raised over $600 million for research, helping accelerate more than 50 FDA drug approvals and giving patients more time with the people they love.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-band">
+      <p>Sam Lower Memorial Golf Tournament · samlowermemorial.org</p>
+      <p class="cause">All proceeds support Multiple Myeloma research.</p>
+    </div>
+
+  </div>
+</body>
+</html>
