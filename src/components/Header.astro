@@ -1,10 +1,8 @@
 ---
 // src/components/Header.astro
-import RegistrationBar from './RegistrationBar.astro';
 ---
 
 <header class="bg-white shadow-sm border-b relative z-50">
-    <RegistrationBar />
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div class="flex items-center justify-between">
             <a href="/" class="flex items-center space-x-3 min-w-0">
@@ -21,11 +19,8 @@ import RegistrationBar from './RegistrationBar.astro';
 
             <!-- Desktop nav -->
             <nav class="hidden md:flex space-x-8">
-                <a href="/#about" class="text-gray-600 hover:text-green-600 transition-colors">About</a>
-                <a href="/updates" class="text-gray-600 hover:text-green-600 transition-colors">Updates</a>
-                <a href="/tournament-format" class="text-gray-600 hover:text-green-600 transition-colors">Format</a>
-                <a href="/the-field" class="text-gray-600 hover:text-green-600 transition-colors">The Field</a>
-                <a href="/faq" class="text-gray-600 hover:text-green-600 transition-colors">FAQ</a>
+                <a href="/#recap" class="text-gray-600 hover:text-green-600 transition-colors">Event Recap</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdvDFES88TH2CSvIKxKnGTgfwNqLUhbPzNmJ-n6z3pF3ycYoA/viewform" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-green-600 transition-colors">Mailing List</a>
             </nav>
 
             <!-- Hamburger button -->
@@ -43,11 +38,8 @@ import RegistrationBar from './RegistrationBar.astro';
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white">
         <nav class="max-w-7xl mx-auto px-4 py-3 flex flex-col">
-            <a href="/#about" class="px-4 py-3 text-gray-600 hover:text-green-600 hover:bg-gray-50 rounded-lg transition-colors font-medium">About</a>
-            <a href="/updates" class="px-4 py-3 text-gray-600 hover:text-green-600 hover:bg-gray-50 rounded-lg transition-colors font-medium">Updates</a>
-            <a href="/tournament-format" class="px-4 py-3 text-gray-600 hover:text-green-600 hover:bg-gray-50 rounded-lg transition-colors font-medium">Format</a>
-            <a href="/the-field" class="px-4 py-3 text-gray-600 hover:text-green-600 hover:bg-gray-50 rounded-lg transition-colors font-medium">The Field</a>
-            <a href="/faq" class="px-4 py-3 text-gray-600 hover:text-green-600 hover:bg-gray-50 rounded-lg transition-colors font-medium">FAQ</a>
+            <a href="/#recap" class="px-4 py-3 text-gray-600 hover:text-green-600 hover:bg-gray-50 rounded-lg transition-colors font-medium">Event Recap</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdvDFES88TH2CSvIKxKnGTgfwNqLUhbPzNmJ-n6z3pF3ycYoA/viewform" target="_blank" rel="noopener noreferrer" class="px-4 py-3 text-gray-600 hover:text-green-600 hover:bg-gray-50 rounded-lg transition-colors font-medium">Mailing List</a>
         </nav>
     </div>
 </header>
